@@ -1,8 +1,8 @@
 # Documentation license
 
-Unless a file says otherwise, the documentation, blank examples, and public-safe proposal in `COMMERCIAL-MODEL.md` are licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public License (CC BY-SA 4.0). Internal business or financial planning material, brand assets, and third-party material are excluded.
+Unless a file says otherwise, the documentation and blank examples are licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public License (CC BY-SA 4.0). Internal business or financial planning material, brand assets, and third-party material are excluded.
 
-Attribution: Copyright 2026 黑曜智體有限公司 (AM&PM AIOPS CO., LTD.).
+Attribution: Copyright 2026 黑曜智體有限公司 (AmPm AiOps Co., Ltd.).
 
 The full legal terms are available at:
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
