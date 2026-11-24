@@ -1,25 +1,27 @@
-# 品質閘門
+# Quality gates
 
-品質閘門是實際執行控制，不是只供代理參考的建議文字。每道閘門應記錄判定結果、政策版本及失敗處置。
+> 繁體中文：[zh-TW/quality-gates.md](zh-TW/quality-gates.md)
 
-| 閘門 | 最低檢查 | 未通過時 |
+Quality gates are runtime controls, not advisory text for the agent to read. Each gate should record its result, the policy version and how a failure was handled.
+
+| Gate | Minimum check | On failure |
 | --- | --- | --- |
-| 任務完整性 | 目的、負責人、範圍、停止條件、驗收條件與期限存在 | 拒絕提交 |
-| 身分與授權 | 請求者、核准者及執行身分有效；權限符合工作單 | 拒絕或升級 |
-| 資料處理 | 資料來源、敏感度及允許用途明確；秘密不進入一般紀錄 | 隔離資料並停止 |
-| 工具限制 | 僅可呼叫明確允許的工具與操作；限制副作用及資源使用 | 阻擋呼叫 |
-| 高影響動作 | 刪除、外部發布、付款、權限變更等依政策取得人工核准 | 暫停等待核准 |
-| 執行安全 | 逾時、重試、限流及中止機制已設定 | 終止或轉人工 |
-| 結果驗收 | 以獨立於代理自述的檢查比對預定條件 | 標記未驗收 |
-| 結案紀錄 | 產生最少必要的收據，標示失敗、部分完成及核准狀態 | 不得標記完成 |
+| Task completeness | Purpose, owner, scope, stop conditions, acceptance criteria and deadline are present | Reject the submission |
+| Identity and authorization | Requester, approver and executing identity are valid; permissions match the work order | Reject or escalate |
+| Data handling | Data source, sensitivity and permitted use are clear; secrets never enter general records | Isolate the data and stop |
+| Tool restrictions | Only explicitly allowed tools and operations can be called; side effects and resource use are limited | Block the call |
+| High-impact actions | Deletes, external publishing, payments, permission changes and similar actions get human approval per policy | Pause until approved |
+| Execution safety | Timeouts, retries, rate limits and abort mechanisms are configured | Terminate or hand to a human |
+| Result acceptance | Results are checked against predefined criteria by a check independent of the agent's own report | Mark as not accepted |
+| Closure record | A minimal receipt is produced, marking failures, partial completion and approval status | Do not mark as complete |
 
-## 測試最低要求
+## Minimum testing
 
-在試行前，至少測試：
+Before a pilot, test at least:
 
-- 缺欄位、無效身分、過期核准及工作單修改後的舊核准。
-- 超出範圍的工具要求、拒絕、逾時、重複請求及部分失敗。
-- 外部內容帶有指令、敏感資料外洩風險，以及必須升級人工的情境。
-- 人工取消、權限撤銷、重試上限與復原程序。
+- Missing fields, invalid identities, expired approvals, and old approvals reused after the work order changed.
+- Out-of-scope tool requests, rejections, timeouts, duplicate requests and partial failures.
+- External content carrying instructions, risk of sensitive-data leakage, and situations that must escalate to a human.
+- Human cancellation, permission revocation, retry limits and recovery procedures.
 
-測試結果僅適用於明確記錄的環境、版本、資料與情境。模擬測試不能代表生產環境表現、錯誤率保證或認證。
+Test results apply only to the explicitly recorded environment, versions, data and scenarios. Simulated tests do not represent production behavior, an error-rate guarantee or a certification.

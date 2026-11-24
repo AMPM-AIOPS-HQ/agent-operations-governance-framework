@@ -1,36 +1,38 @@
-# 架構與治理原則
+# Architecture and governance principles
 
-## 目的
+> 繁體中文：[zh-TW/architecture.md](zh-TW/architecture.md)
 
-AOGF 將代理工作流程視為一項有明確負責人、授權邊界、風險控制與結果紀錄的營運流程。治理應與實際執行環境相符，而非只依賴提示文字或模型自我聲明。
+## Purpose
 
-## 邏輯組件
+AOGF treats an agent workflow as an operational process with a clear owner, authorization boundaries, risk controls and a record of outcomes. Governance must match the actual runtime environment; it cannot rely on prompt text or on the model's own statements.
 
-1. **請求者與負責人**：說明目標、確認用途，並承擔核准與結果處置責任。
-2. **工作單**：描述任務、範圍、工具權限、資料限制、驗收條件及停止條件。
-3. **政策與品質閘門**：在執行前、執行中或完成後檢查授權、風險與產出。
-4. **代理與受控工具**：只在授予的權限內執行；執行環境應在技術上限制可用工具及資料。
-5. **人工覆核者**：對高影響、不可逆或超出預先授權範圍的動作進行核准或拒絕。
-6. **收據與稽核紀錄**：記錄可重現所需的最少資訊，並支援調查、修正與覆核。
+## Logical components
 
-這些是邏輯責任，不要求部署成個別服務。實際控制可由工作流程引擎、權限系統、政策檢查與儲存機制實作。
+1. **Requester and owner**: states the goal, confirms the purpose, and is accountable for approval and for handling the outcome.
+2. **Work order**: describes the task, scope, tool permissions, data restrictions, acceptance criteria and stop conditions.
+3. **Policy and quality gates**: check authorization, risk and output before, during or after execution.
+4. **Agent and controlled tools**: act only within granted permissions; the runtime should technically restrict which tools and data are available.
+5. **Human reviewer**: approves or rejects actions that are high-impact, irreversible or outside the pre-authorized scope.
+6. **Receipts and audit records**: capture the minimum information needed to reproduce what happened, and support investigation, correction and review.
 
-## 信任邊界
+These are logical responsibilities; they do not have to be deployed as separate services. The controls can be implemented with a workflow engine, a permission system, policy checks and storage.
 
-- 使用者輸入、外部檔案、工具回應及模型輸出均視為不可信資料。
-- 提示、工作單或模型輸出不能自行授予額外權限。
-- 憑證、個人資料及機密內容應留在專用安全儲存區，不應複製到一般日誌或收據。
-- 工具副作用應以明確權限、核准及可驗證結果控制；單靠事後文字紀錄不足以阻止未授權動作。
+## Trust boundaries
 
-## 核心原則
+- User input, external files, tool responses and model output are all treated as untrusted data.
+- A prompt, a work order or model output cannot grant itself additional permissions.
+- Credentials, personal data and confidential content belong in dedicated secure storage, not in general logs or receipts.
+- Tool side effects are controlled with explicit permissions, approvals and verifiable results; a written record after the fact is not enough to stop an unauthorized action.
 
-- **最小權限**：只授予完成任務所需的工具、資料及時間範圍。
-- **明確授權**：將允許與禁止事項寫入工作單，並讓執行環境強制執行。
-- **可逆優先**：先採取低影響、可回復步驟；不可逆動作需額外核准。
-- **人類負責**：指定可聯絡的負責人及升級方式；代理不是風險承擔者。
-- **資料最少化**：只保留營運所需的紀錄，並規定存取及保留期限。
-- **可檢視但不過度宣稱**：完整性檢查有助發現變更，但不等同防竄改保證或第三方稽核。
+## Core principles
 
-## 部署考量
+- **Least privilege**: grant only the tools, data and time window the task needs.
+- **Explicit authorization**: write what is allowed and what is prohibited into the work order, and have the runtime enforce it.
+- **Reversible first**: take low-impact, recoverable steps first; irreversible actions need additional approval.
+- **Humans are accountable**: name a reachable owner and an escalation path; the agent is not the party that bears the risk.
+- **Data minimization**: keep only the records operations need, with defined access and retention.
+- **Reviewable, not overstated**: integrity checks help detect changes but are not a tamper-proof guarantee or a third-party audit.
 
-部署者應記錄執行環境、政策版本、模型與工具版本、權限設定、資料流及保留政策。依風險配置隔離、限流、逾時、重試上限與人工停止機制。這份架構文件本身不證明任何部署已實作上述控制。
+## Deployment considerations
+
+Deployers should record the runtime environment, policy version, model and tool versions, permission settings, data flows and retention policy. Configure isolation, rate limits, timeouts, retry limits and a human stop mechanism according to risk. This architecture document does not by itself prove that any deployment has implemented these controls.

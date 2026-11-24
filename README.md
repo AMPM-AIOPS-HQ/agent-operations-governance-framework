@@ -71,8 +71,6 @@ AOGF is a **vendor-neutral governance whitepaper** with blank templates. It turn
 | 📝 [`examples/work-order.example.yaml`](examples/work-order.example.yaml) | Blank work-order template |
 | 📄 [`examples/receipt.example.json`](examples/receipt.example.json) | Blank receipt template |
 
-> The four documents in `docs/` are currently written in Traditional Chinese; English versions are planned.
-
 ## 04 · Reference flow
 
 ```mermaid
@@ -186,10 +184,10 @@ AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供�
 
 | 文件 | 一句話 |
 |:--|:--|
-| 📐 [`docs/architecture.md`](docs/architecture.md) | 六個邏輯角色、信任邊界、核心原則 |
-| 🔁 [`docs/work-order-lifecycle.md`](docs/work-order-lifecycle.md) | `draft → submitted → approved → running → completed` 狀態機與撤銷規則 |
-| 🚦 [`docs/quality-gates.md`](docs/quality-gates.md) | 8 道閘門的最低檢查、未通過處置、試行前測試清單 |
-| 🧾 [`docs/receipts-and-audit.md`](docs/receipts-and-audit.md) | 收據建議欄位、不得記錄的內容、雜湊與簽章的界線 |
+| 📐 [`docs/architecture.md`](docs/zh-TW/architecture.md) | 六個邏輯角色、信任邊界、核心原則 |
+| 🔁 [`docs/work-order-lifecycle.md`](docs/zh-TW/work-order-lifecycle.md) | `draft → submitted → approved → running → completed` 狀態機與撤銷規則 |
+| 🚦 [`docs/quality-gates.md`](docs/zh-TW/quality-gates.md) | 8 道閘門的最低檢查、未通過處置、試行前測試清單 |
+| 🧾 [`docs/receipts-and-audit.md`](docs/zh-TW/receipts-and-audit.md) | 收據建議欄位、不得記錄的內容、雜湊與簽章的界線 |
 | 📝 [`examples/work-order.example.yaml`](examples/work-order.example.yaml) | 工作單空白模板 |
 | 📄 [`examples/receipt.example.json`](examples/receipt.example.json) | 收據空白模板 |
 
@@ -225,9 +223,9 @@ flowchart LR
 | 步驟 | 做什麼 | 用哪個檔 |
 |:--:|:--|:--|
 | **1** | 寫明目的、負責人、允許工具、禁止動作、驗收與停止條件、有效期限 | [`work-order.example.yaml`](examples/work-order.example.yaml) |
-| **2** | 逐項對照閘門，分清哪些由環境強制、哪些要人工核准 | [`quality-gates.md`](docs/quality-gates.md) |
+| **2** | 逐項對照閘門，分清哪些由環境強制、哪些要人工核准 | [`quality-gates.md`](docs/zh-TW/quality-gates.md) |
 | **3** | 執行一次，記錄版本、閘門結果、核准事件、驗收狀態 | [`receipt.example.json`](examples/receipt.example.json) |
-| **4** | 抽樣比對收據與實際結果，調整權限與政策後再擴大範圍 | [`receipts-and-audit.md`](docs/receipts-and-audit.md) |
+| **4** | 抽樣比對收據與實際結果，調整權限與政策後再擴大範圍 | [`receipts-and-audit.md`](docs/zh-TW/receipts-and-audit.md) |
 
 ## 06 · 設計原則
 

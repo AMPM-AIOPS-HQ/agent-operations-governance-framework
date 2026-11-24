@@ -1,24 +1,26 @@
-# 收據與稽核紀錄
+# Receipts and audit records
 
-收據摘要工作執行中可供覆核的事件。它不是完整的安全控制，也不應成為秘密或敏感輸出的副本。
+> 繁體中文：[zh-TW/receipts-and-audit.md](zh-TW/receipts-and-audit.md)
 
-## 建議記錄欄位
+A receipt summarizes the reviewable events of a piece of work. It is not a complete security control, and it must not become a copy of secrets or sensitive output.
 
-- 工作單識別碼及版本、狀態、開始與結束時間。
-- 請求、核准及執行身分的內部識別碼（依需要最小化）。
-- 政策、模型、工具及執行環境版本。
-- 工具呼叫摘要、核准事件、品質閘門結果及錯誤分類。
-- 結果驗收狀態、人工覆核者、未解決事項與後續處置。
-- 若採用雜湊，明確記錄演算法及被雜湊內容的範圍。
+## Recommended fields
 
-不得記錄明文憑證、私鑰、完整敏感提示、非必要個人資料或未經核准的客戶內容。日誌存取、保留、刪除及匯出須依適用政策管理。
+- Work-order identifier and version, status, start and end time.
+- Internal identifiers for the requesting, approving and executing identities (minimized as needed).
+- Policy, model, tool and runtime versions.
+- Summary of tool calls, approval events, gate results and error categories.
+- Acceptance status, human reviewer, open issues and follow-up actions.
+- If hashes are used, the algorithm and exactly what content was hashed.
 
-## 完整性與限制
+Never record plaintext credentials, private keys, full sensitive prompts, unnecessary personal data or customer content that has not been approved. Access, retention, deletion and export of logs follow the applicable policy.
 
-SHA-256 雜湊可用於檢查特定位元組內容是否與已知摘要相符；雜湊本身不是數位簽章，不能證明作者身分，也不能防止有權限者同時修改資料與摘要。數位簽章需有受控私鑰及驗證流程。所謂「附加式」或「僅追加」紀錄，取決於實作、權限與儲存設定，並非絕對不可竄改的保證。
+## Integrity and limitations
 
-重要紀錄可另外採取受限寫入、分離管理、備份、時間戳及定期核對等措施。若採用，應描述具體實作與剩餘風險，而非宣稱「絕對防竄改」。
+A SHA-256 hash can show that specific bytes match a known digest. A hash is not a digital signature: it cannot prove authorship, and it cannot stop someone with access from changing both the data and the digest. Digital signatures require a controlled private key and a verification process. Whether a log is "append-only" depends on implementation, permissions and storage configuration; it is not an absolute guarantee against tampering.
 
-## 範例
+Important records can additionally use restricted write access, separated administration, backups, timestamps and periodic reconciliation. If you adopt these measures, describe the concrete implementation and the remaining risk instead of claiming the records are "absolutely tamper-proof".
 
-[`examples/receipt.example.json`](../examples/receipt.example.json) 是空白欄位模板，不包含真實識別碼、執行紀錄或簽章。
+## Example
+
+[`examples/receipt.example.json`](../examples/receipt.example.json) is a blank field template. It contains no real identifiers, execution records or signatures.

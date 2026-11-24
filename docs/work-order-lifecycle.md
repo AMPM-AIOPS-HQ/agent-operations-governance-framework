@@ -1,27 +1,29 @@
-# 工作單生命週期
+# Work-order lifecycle
 
-工作單是人類核准的任務界線，不是模型取得授權的來源。執行環境必須另行驗證身分與權限。
+> 繁體中文：[zh-TW/work-order-lifecycle.md](zh-TW/work-order-lifecycle.md)
 
-## 狀態
+A work order is a human-approved task boundary, not a source of authority for the model. The runtime must verify identity and permissions separately.
+
+## States
 
 `draft → submitted → approved → running → completed`
 
-可在任何執行前階段標記為 `rejected` 或 `cancelled`；執行開始後可轉為 `failed`、`cancelled` 或 `needs_review`。狀態轉換須保留時間、操作者或服務身分，以及原因。
+Before execution starts, a work order can be marked `rejected` or `cancelled`. After execution starts it can move to `failed`, `cancelled` or `needs_review`. Every state transition keeps the time, the operator or service identity, and the reason.
 
-## 流程
+## Flow
 
-1. **建立**：請求者填寫目的、範圍、輸入資料、允許工具、禁止動作、驗收條件、有效期限及負責人。
-2. **預檢**：系統驗證必填欄位、身分、權限、政策版本及風險分類。未通過時不得開始執行。
-3. **核准**：具適當職責的人員依風險審查。核准須綁定工作單版本；任何實質變更都應重新核准。
-4. **執行**：環境依核准範圍提供受限權限。每次工具呼叫均應由環境驗證，不得只採信代理文字。
-5. **停止或升級**：遇到超出範圍、資料不足、政策衝突、風險升高、核准失效或安全疑慮時，停止副作用並轉交負責人。
-6. **驗收與結案**：依事先定義的條件核對結果；將成功、部分完成及失敗分開記錄，不以代理自述作為唯一證據。
-7. **檢視與改善**：依工作流程風險抽樣檢查收據與結果，必要時暫停該工作流程、撤銷權限或更新政策。
+1. **Create**: the requester fills in purpose, scope, input data, allowed tools, prohibited actions, acceptance criteria, expiry and owner.
+2. **Pre-check**: the system validates required fields, identity, permissions, policy version and risk classification. Execution must not start until this passes.
+3. **Approve**: a person with the appropriate responsibility reviews according to risk. Approval is bound to the work-order version; any material change requires re-approval.
+4. **Execute**: the runtime provides restricted permissions within the approved scope. Every tool call is verified by the runtime, never accepted on the agent's word alone.
+5. **Stop or escalate**: when the work goes out of scope, data is insufficient, policies conflict, risk rises, approval lapses or a safety concern appears, stop side effects and hand over to the owner.
+6. **Accept and close**: check results against the predefined criteria; record success, partial completion and failure separately, and never use the agent's own report as the only evidence.
+7. **Review and improve**: sample receipts and outcomes according to workflow risk; when needed, pause the workflow, revoke permissions or update the policy.
 
-## 核准與撤銷
+## Approval and revocation
 
-核准需有範圍、有效期限及核准者。若工作單已修改、身分或權限變更、政策版本不相容，或風險假設不再成立，應使核准失效。撤銷後，執行環境應阻止新動作；對已開始的動作則依預定停止與復原程序處理。
+An approval has a scope, an expiry and an approver. It becomes invalid when the work order is modified, when identity or permissions change, when the policy version is incompatible, or when the risk assumptions no longer hold. After revocation the runtime blocks new actions; actions already in progress follow the predefined stop and recovery procedure.
 
-## 失敗處理
+## Failure handling
 
-失敗不可偽裝成成功。記錄已完成與未完成的步驟、可能副作用、補救狀態及負責人。重試須受次數與冪等性限制；無法安全重試時轉人工處理。
+A failure must never be presented as a success. Record completed and uncompleted steps, possible side effects, remediation status and the owner. Retries are bounded by count and idempotency; when a safe retry is not possible, hand over to a human.
