@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <img alt="status" src="https://img.shields.io/badge/status-v0.1%20draft-1A1A1A?style=flat-square">
+  <img alt="type" src="https://img.shields.io/badge/type-whitepaper-1A1A1A?style=flat-square">
+  <img alt="status" src="https://img.shields.io/badge/version-v0.1-6B6358?style=flat-square">
   <img alt="docs license" src="https://img.shields.io/badge/docs-CC%20BY--SA%204.0-5B7A72?style=flat-square">
   <img alt="vendor neutral" src="https://img.shields.io/badge/model-vendor%20neutral-6B6358?style=flat-square">
   <img alt="not a certification" src="https://img.shields.io/badge/not-a%20certification-8A8175?style=flat-square">
@@ -17,11 +18,22 @@
   <a href="docs/receipts-and-audit.md">收據與稽核</a>
 </p>
 
-# AOGF：AI 代理營運治理框架
+# AOGF：AI 代理營運治理框架（白皮書）
 
 **讓 AI 代理動到生產系統之前，先有範圍、有人核准、有停止條件；動完之後，留下可以覆核的紀錄。**
 
-AOGF（Agent Operations Governance Framework）是一套**不綁定模型或供應商**的治理文件與空白模板。它把「誰交辦、能做什麼、誰核准、什麼時候必須停、做完怎麼驗收」寫成可落地的工作單與檢查點，讓工程、平台與資安團隊用同一套語言管理 AI 代理。
+AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供應商**的治理白皮書，附空白模板。它把「誰交辦、能做什麼、誰核准、什麼時候必須停、做完怎麼驗收」寫成可落地的工作單與檢查點，讓工程、平台與資安團隊用同一套語言管理 AI 代理。
+
+> [!IMPORTANT]
+> **這個儲存庫只有白皮書與空白框架。**
+>
+> | 有 | 沒有 |
+> |---|---|
+> | 治理框架說明（角色、流程、檢查點、紀錄欄位） | 任何可執行的程式、工具或服務 |
+> | 空白的工作單與收據模板（欄位都是空的） | 任何組織實際使用的規則、門檻或流程細節 |
+> | 設計原則與範圍限制 | 第三方認證、合規證明或效果保證 |
+>
+> 你可以照這個框架，填入自己團隊的規則、權限與驗收條件。框架只告訴你「該有哪些欄位與檢查點」，**不替你決定內容，也不替你執行任何控制**。
 
 ---
 
