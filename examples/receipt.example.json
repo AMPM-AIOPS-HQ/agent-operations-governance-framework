@@ -1,0 +1,31 @@
+{
+  "receipt_version": "",
+  "work_order_id": "",
+  "work_order_version": null,
+  "execution_id": "",
+  "status": "",
+  "started_at": "",
+  "ended_at": "",
+  "actor_refs": {
+    "requester": "",
+    "approver": "",
+    "executor": ""
+  },
+  "versions": {
+    "policy": "",
+    "model": "",
+    "toolset": "",
+    "runtime": ""
+  },
+  "gate_results": [],
+  "actions": [],
+  "outcome": {
+    "accepted": null,
+    "summary": ""
+  },
+  "integrity": {
+    "algorithm": "",
+    "digest": "",
+    "scope": ""
+  }
+}

@@ -1,0 +1,26 @@
+# Blank template only. Complete and validate before use.
+work_order:
+  id: ""
+  version:
+  status: ""
+  purpose: ""
+  requester: ""
+  owner: ""
+  expires_at: ""
+  risk:
+    level: ""
+    rationale: ""
+  scope:
+    allowed_inputs: []
+    allowed_tools: []
+    prohibited_actions: []
+  data_handling:
+    classification: ""
+    retention: ""
+    secrets_permitted:
+  approval:
+    required:
+    approver_role: ""
+    status: ""
+  acceptance: []
+  stop_conditions: []
