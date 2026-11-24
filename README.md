@@ -248,8 +248,8 @@ flowchart LR
 
 | 項目 | 說明 |
 |:--|:--|
-| 修訂建議 | 見 [CONTRIBUTING.md](CONTRIBUTING.md)：使用虛構範例，勿放入真實客戶、憑證或內部路徑 |
-| 安全回報 | 見 [SECURITY.md](SECURITY.md)：勿在公開議題張貼可利用細節 |
+| 修訂建議 | 見 [CONTRIBUTING.md](docs/zh-TW/CONTRIBUTING.md)：使用虛構範例，勿放入真實客戶、憑證或內部路徑 |
+| 安全回報 | 見 [SECURITY.md](docs/zh-TW/SECURITY.md)：勿在公開議題張貼可利用細節 |
 | 文件與模板授權 | CC BY-SA 4.0（[LICENSE-DOCS.md](LICENSE-DOCS.md)） |
 | 程式碼授權 | Apache-2.0（[LICENSE-CODE.md](LICENSE-CODE.md)；目前尚未包含程式碼） |
 | 品牌 | 品牌名稱、商標與標誌不在上述授權範圍內 |

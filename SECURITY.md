@@ -1,15 +1,17 @@
-# 安全性政策
+# Security policy
 
-本儲存庫目前是初稿文件專案，尚未對外承諾安全回應時限或漏洞獎勵。
+> 繁體中文：[docs/zh-TW/SECURITY.md](docs/zh-TW/SECURITY.md)
 
-## 回報問題
+This repository is an early-stage documentation project. It does not yet commit to a security response time or offer a bug bounty.
 
-請勿在公開議題中張貼可利用細節、憑證、個人資料或真實客戶資訊。若已提供維護者核准的私人聯絡管道，請使用該管道並只提交調查所需的最少資訊；否則請先透過可信任的既有聯絡方式詢問安全回報方式。請勿附上秘密或未遮蔽的生產紀錄。
+## Reporting an issue
 
-## 範圍
+Do not post exploitable details, credentials, personal data or real customer information in public issues. If the maintainers have published a private contact channel, use it and send only the minimum information needed to investigate. Otherwise, first ask how to report a security issue through a trusted existing contact method. Do not attach secrets or unredacted production logs.
 
-此政策涵蓋本儲存庫中的文件與空白範例模板；它們不是可部署的產品程式碼。第三方服務與 AM&PM 網站不因連結出現在本文件而納入本專案的安全範圍。
+## Scope
 
-## 回應
+This policy covers the documents and blank example templates in this repository; they are not deployable product code. Third-party services and the AM&PM website are not brought into this project's security scope just because they are linked from these documents.
 
-維護者應確認問題是否影響本專案文件或範例，採取適當修訂，並避免在未取得回報者同意前公開其身分或細節。此初稿未設定保證回應時間。
+## Response
+
+Maintainers should confirm whether an issue affects the documents or examples in this project, make appropriate revisions, and avoid disclosing the reporter's identity or details without their consent. This early version does not set a guaranteed response time.

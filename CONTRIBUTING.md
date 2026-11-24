@@ -1,19 +1,21 @@
-# 貢獻指南
+# Contributing
 
-歡迎提出能讓治理指引更清晰、可驗證且安全的修訂。提出修改前請先確認文件不會洩漏內部營運資訊。
+> 繁體中文：[docs/zh-TW/CONTRIBUTING.md](docs/zh-TW/CONTRIBUTING.md)
 
-## 提交內容
+Revisions that make the governance guidance clearer, more verifiable and safer are welcome. Before proposing a change, make sure it does not reveal internal operational information.
 
-- 使用虛構範例；勿加入真實客戶、交易、工作流程、識別碼、內部路徑、憑證或未公開指標。
-- 將可驗證的要求與建議性作法分開，並標明適用範圍及限制。
-- 避免未經證實的合規、認證、準確率、安全性或效能宣稱。
-- 若文件改變工作單欄位或狀態，請一併更新相關範例與生命週期說明。
-- 不得將 SHA-256 雜湊描述為數位簽章或防竄改保證。
+## What to submit
 
-## 檢查清單
+- Use fictional examples. Do not add real customers, transactions, workflows, identifiers, internal paths, credentials or unpublished metrics.
+- Keep verifiable requirements separate from recommended practices, and state their scope and limitations.
+- Avoid unproven claims about compliance, certification, accuracy, security or performance.
+- If a change alters work-order fields or states, update the related examples and the lifecycle description in the same change.
+- Never describe a SHA-256 hash as a digital signature or a tamper-proof guarantee.
 
-提交前確認 Markdown 連結有效、YAML 與 JSON 範例可解析、內容一致，且沒有秘密或非公開資料。重大治理政策變更應說明風險、責任人及失敗處理方式。
+## Checklist
 
-## 授權
+Before submitting, confirm that Markdown links work, the YAML and JSON examples parse, the content is consistent, and nothing secret or non-public is included. Significant governance-policy changes should explain the risk, the owner and how failures are handled.
 
-程式碼（如有）適用 [`LICENSE-CODE.md`](LICENSE-CODE.md) 所述 Apache-2.0；文件與範例適用 [`LICENSE-DOCS.md`](LICENSE-DOCS.md) 所述 CC BY-SA 4.0。內部商業或財務規劃、品牌資產及第三方素材不在上述授權範圍內。
+## License
+
+Code (if any) is covered by Apache-2.0 as described in [`LICENSE-CODE.md`](LICENSE-CODE.md); documents and examples are covered by CC BY-SA 4.0 as described in [`LICENSE-DOCS.md`](LICENSE-DOCS.md). Internal business or financial planning, brand assets and third-party material are outside these licenses.
