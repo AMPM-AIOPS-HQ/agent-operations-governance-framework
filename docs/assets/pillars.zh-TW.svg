@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="250" viewBox="0 0 1280 250" role="img" aria-labelledby="pt pd">
+  <title id="pt">AOGF four pillars</title>
+  <desc id="pd">Work orders, review gates, human approval, receipts.</desc>
+  <defs>
+    <style>
+      .sans{font-family:"Inter","Segoe UI","Noto Sans TC","Microsoft JhengHei","PingFang TC",Arial,sans-serif}
+      .mono{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace}
+    </style>
+  </defs>
+  <rect width="1280" height="250" fill="#FBF3E6"/>
+  <g class="sans">
+    <!-- card 1 -->
+    <g transform="translate(24 24)">
+      <rect width="296" height="202" rx="14" fill="#5B7A72" fill-opacity=".12" stroke="#5B7A72" stroke-width="2"/>
+      <rect x="16" y="-3" width="264" height="6" rx="3" fill="#5B7A72"/>
+      <text x="148" text-anchor="middle" y="54" class="mono" font-size="14" font-weight="700" fill="#5B7A72">01 · WORK ORDERS</text>
+      <text x="148" text-anchor="middle" y="98" font-size="30" font-weight="800" fill="#1A1A1A">先寫清楚再動手</text>
+      <text x="148" text-anchor="middle" y="136" font-size="16" fill="#3A3530">目的、負責人、允許工具、</text>
+      <text x="148" text-anchor="middle" y="160" font-size="16" fill="#3A3530">禁止動作、停止條件，</text>
+      <text x="148" text-anchor="middle" y="184" font-size="16" fill="#3A3530">一張工作單講完。</text>
+    </g>
+    <!-- card 2 -->
+    <g transform="translate(336 24)">
+      <rect width="296" height="202" rx="14" fill="#B8913F" fill-opacity=".12" stroke="#B8913F" stroke-width="2"/>
+      <rect x="16" y="-3" width="264" height="6" rx="3" fill="#B8913F"/>
+      <text x="148" text-anchor="middle" y="54" class="mono" font-size="14" font-weight="700" fill="#9A7630">02 · REVIEW GATES</text>
+      <text x="148" text-anchor="middle" y="98" font-size="30" font-weight="800" fill="#1A1A1A">不過關就不執行</text>
+      <text x="148" text-anchor="middle" y="136" font-size="16" fill="#3A3530">任務完整、身分授權、</text>
+      <text x="148" text-anchor="middle" y="160" font-size="16" fill="#3A3530">資料處理、工具限制，</text>
+      <text x="148" text-anchor="middle" y="184" font-size="16" fill="#3A3530">8 道閘門逐項檢查。</text>
+    </g>
+    <!-- card 3 -->
+    <g transform="translate(648 24)">
+      <rect width="296" height="202" rx="14" fill="#B0644A"/>
+      <text x="148" text-anchor="middle" y="54" class="mono" font-size="14" font-weight="700" fill="#F6E3D8">03 · HUMAN APPROVAL</text>
+      <text x="148" text-anchor="middle" y="98" font-size="30" font-weight="800" fill="#FFFDF8">高風險要人點頭</text>
+      <text x="148" text-anchor="middle" y="136" font-size="16" fill="#F6E3D8">刪除、發布、付款、改權限，</text>
+      <text x="148" text-anchor="middle" y="160" font-size="16" fill="#F6E3D8">核准綁定工作單版本，</text>
+      <text x="148" text-anchor="middle" y="184" font-size="16" fill="#F6E3D8">內容一改就失效。</text>
+    </g>
+    <!-- card 4 -->
+    <g transform="translate(960 24)">
+      <rect width="296" height="202" rx="14" fill="#5E7391" fill-opacity=".12" stroke="#5E7391" stroke-width="2"/>
+      <rect x="16" y="-3" width="264" height="6" rx="3" fill="#5E7391"/>
+      <text x="148" text-anchor="middle" y="54" class="mono" font-size="14" font-weight="700" fill="#5E7391">04 · RECEIPTS</text>
+      <text x="148" text-anchor="middle" y="98" font-size="30" font-weight="800" fill="#1A1A1A">做完留下證據</text>
+      <text x="148" text-anchor="middle" y="136" font-size="16" fill="#3A3530">版本、閘門結果、核准事件、</text>
+      <text x="148" text-anchor="middle" y="160" font-size="16" fill="#3A3530">驗收狀態，失敗如實記錄，</text>
+      <text x="148" text-anchor="middle" y="184" font-size="16" fill="#3A3530">事後可以覆核。</text>
+    </g>
+  </g>
+</svg>
