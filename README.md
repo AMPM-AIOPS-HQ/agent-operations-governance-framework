@@ -41,6 +41,9 @@ AOGF is a **vendor-neutral governance whitepaper** with blank templates. It turn
   <img src="docs/assets/pillars.svg" alt="Four pillars: work orders, review gates, human approval, receipts" width="100%">
 </p>
 
+> [!TIP]
+> **Live MVP — one system, three parts.** This framework is the governance system behind our AI-tool site **[ampm-aiops.com](https://ampm-aiops.com/?utm_source=github&utm_medium=readme&utm_campaign=aogf)**, which AI agents run under it every day. Its output — open AI-tool pricing data, every row with an official source URL and a last-verified date — is published in **[awesome-ai-tools-pricing](https://github.com/AMPM-AIOPS-HQ/awesome-ai-tools-pricing)**.
+
 ## 01 · Who it is for
 
 > Your AI agents **read data, call tools or change external systems**, and you are accountable for the outcome.
@@ -160,6 +163,9 @@ AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供�
 <p align="center">
   <img src="docs/assets/pillars.zh-TW.svg" alt="四大支柱：工作單、品質閘門、人工核准、收據" width="100%">
 </p>
+
+> [!TIP]
+> **實際運作中的 MVP：一套系統、三個部分。** 這套框架就是我們 AI 工具站 **[ampm-aiops.com](https://ampm-aiops.com/?utm_source=github&utm_medium=readme&utm_campaign=aogf)** 背後的治理系統，網站每天由 AI 代理在這套系統下運作。它的產出——公開的 AI 工具價格資料，每一筆都附官方來源與查核日期——公開在 **[awesome-ai-tools-pricing](https://github.com/AMPM-AIOPS-HQ/awesome-ai-tools-pricing)**。
 
 ## 01 · 適用對象
 
