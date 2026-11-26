@@ -38,6 +38,8 @@ The eight gates above say *what* to check. This section says *who* checks, becau
 
 The remaining gates (data handling, tool restrictions, execution safety) are enforced continuously by the runtime rather than by a seat.
 
+All three seats are automated procedures, not roles held by the actor, and every verdict leaves a record that can be looked up. Both plan review and result verification rely on counter-examples: the first confirms the list contains one, the second actually runs it. Work by people and AI agents, and every run of an automation, pass through the same three seats (see [the complete flow at a glance](work-order-lifecycle.md#the-complete-flow-at-a-glance)).
+
 Three properties make the seats worth having:
 
 - **Separation**: no seat is held by the actor whose work it reviews, and a seat does not review another seat's verdict.

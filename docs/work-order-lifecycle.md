@@ -20,6 +20,39 @@ Before execution starts, a work order can be marked `rejected` or `cancelled`. A
 6. **Accept and close**: check results against the predefined criteria; record success, partial completion and failure separately, and never use the agent's own report as the only evidence. Who performs this check, and who releases the result, is described in [quality-gates.md](quality-gates.md#three-review-seats).
 7. **Review and improve**: sample receipts and outcomes according to workflow risk; when needed, pause the workflow, revoke permissions or update the policy.
 
+## The complete flow at a glance
+
+This section walks the whole path once, end to end. The three tracks share the same review seats; they differ only in how the work order comes into existence. All three review seats are automated procedures; see [quality-gates.md](quality-gates.md#three-review-seats).
+
+**Triage first.** Reading, searching, answering a question, or proposing a plan that stays in the conversation needs no work order. Anything that uses a tool to change something enters one of the tracks below.
+
+### Track 1 — Work by people and AI agents
+
+1. **Open a work order**: the request in the requester's own words, the deliverables, the acceptance checks, and at least one counter-example.
+2. **Plan review**: is the plan complete, can the acceptance checks actually be tested, and does the list contain a counter-example? Permission to execute is issued only after this passes.
+3. **Execute**: act only within the approved scope and keep evidence along the way. A block or an error is recorded when it happens, not afterwards.
+4. **Result verification**: every acceptance check and counter-example is re-run independently. When there is a doubt, it names the re-runnable evidence that would resolve it.
+5. **Release and closure**: confirm that the plan-review record, the verification record, the plan and the evidence are all present. Work that needs releasing is released by this seat itself, which then observes the result in the live environment. Work that needs no release is closed only, and is never described as released.
+6. **Receipt**: a receipt is issued and filed. Without a receipt, the work is not called done.
+
+### Track 2 — Automations (scheduled jobs, pipelines, content-writing jobs)
+
+1. Each automation has a **pre-approved task list**.
+2. Each run opens a work order automatically. Plan review compares it with the task list and confirms that this run is the fixed task on the list.
+3. The automation runs and hands its output to result verification. It does not queue its own output for release.
+4. Result verification compares the output with the task list. A match proceeds to release. An **anomaly** stops and goes to the named coordinator.
+5. A coordinator resolving an anomaly opens a work order and passes the same three seats. Coordinators have no review-free path.
+6. The release seat releases and issues a receipt. Every run has its own receipt, so what happened in that run can be looked up later.
+
+### Track 3 — Exceptions
+
+- **A review procedure is itself stuck**: a person is alerted to repair it, so that work does not sit silently.
+- **A work order whose actor has stopped**: it is reassigned to the coordinator, and the release seat follows it until a receipt exists.
+- **A cancelled work order**: the reason is written down, and the release seat confirms it and leaves a closure record.
+- **The same manual task done for the third time**: it is built into an automation, and every run after that follows Track 2.
+- **A repeated error or a missed defect**: it is turned into a verifiable candidate check that states how it verifies and what it would block. It joins the review procedure only after a person approves it. Review procedures do not rewrite their own rules.
+- **The control plane** (gates, review procedures, security mechanisms, anything involving spending): read-only to agents; changes are applied by a person.
+
 ## Approval and revocation
 
 An approval has a scope, an expiry and an approver. It becomes invalid when the work order is modified, when identity or permissions change, when a policy update is incompatible with what was approved, or when the risk assumptions no longer hold. A policy update that does not change what the work order is allowed to do should not strand work in progress: annotate the work order with the new policy version and let it continue (see "Policy updates and work in progress"). After revocation the runtime blocks new actions; actions already in progress follow the predefined stop and recovery procedure.

@@ -5,6 +5,8 @@
 Additions drawn from operating the framework. No v0.1 content was removed; three sentences were reworded where they conflicted with the additions (the policy-version clause in the lifecycle, the acceptance step, and the "not included" row in the README).
 
 - Lifecycle: scope triage; automations follow the same lifecycle under pre-approved task lists; no orphan work orders; cancellation leaves a record; policy updates and work in progress.
+- Lifecycle: the complete flow at a glance — one track for people and AI agents, one for automations, one for exceptions.
+- Quality gates: the three review seats are automated procedures, and both plan review and result verification rely on counter-examples.
 - Quality gates: three review seats; gates must be reliable too; using an AI model as a reviewer; format checks versus fact checks.
 - Receipts: every run leaves a receipt; the journey record; incident notes and repeat prevention.
 - Architecture: the control plane is human-change-only.
