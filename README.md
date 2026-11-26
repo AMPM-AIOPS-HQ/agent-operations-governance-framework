@@ -4,7 +4,7 @@
 
 <p align="center">
   <img alt="type" src="https://img.shields.io/badge/type-whitepaper-1A1A1A?style=flat-square">
-  <img alt="status" src="https://img.shields.io/badge/version-v0.1-6B6358?style=flat-square">
+  <img alt="status" src="https://img.shields.io/badge/version-v0.2-6B6358?style=flat-square">
   <img alt="docs license" src="https://img.shields.io/badge/docs-CC%20BY--SA%204.0-5B7A72?style=flat-square">
   <img alt="vendor neutral" src="https://img.shields.io/badge/model-vendor%20neutral-6B6358?style=flat-square">
   <img alt="not a certification" src="https://img.shields.io/badge/not-a%20certification-8A8175?style=flat-square">
@@ -32,7 +32,8 @@ AOGF is a **vendor-neutral governance whitepaper** with blank templates. It turn
 > | Included | Not included |
 > |---|---|
 > | Framework guidance: roles, lifecycle, checkpoints, record fields | Any executable code, tool or hosted service |
-> | Blank work-order and receipt templates (every field empty) | Any organization's actual rules, thresholds or internal procedures |
+> | Blank work-order and receipt templates (every field empty) | Any organization's rule text, thresholds or internal procedures |
+> | A usage guide and one high-level case study of how the authors apply the framework | Operational details of that deployment |
 > | Design principles and stated limitations | Third-party certification, compliance attestation or performance guarantees |
 >
 > Use the framework to fill in your own team's rules, permissions and acceptance criteria. It tells you **which fields and checkpoints should exist**; it does not decide their content for you, and it does not enforce any control on its own.
@@ -43,6 +44,18 @@ AOGF is a **vendor-neutral governance whitepaper** with blank templates. It turn
 
 > [!TIP]
 > **Live MVP — one system, three parts.** This framework is the governance system behind our AI-tool site **[ampm-aiops.com](https://ampm-aiops.com/?utm_source=github&utm_medium=readme&utm_campaign=aogf)**, which AI agents run under it every day. Its output — open AI-tool pricing data, every row with an official source URL and a last-verified date — is published in **[awesome-ai-tools-pricing](https://github.com/AMPM-AIOPS-HQ/awesome-ai-tools-pricing)**.
+
+## What's new in v0.2
+
+v0.2 adds what running the framework taught us. Nothing from v0.1 is removed.
+
+| Area | Added |
+| --- | --- |
+| Lifecycle | Scope triage (when a work order is required), automations under pre-approved task lists, no orphan work orders, cancellation records, policy updates and work in progress |
+| Quality gates | Three review seats, reliability requirements for the gates themselves, limits on AI reviewers, format checks versus fact checks |
+| Receipts | A receipt for every run including failed ones, the journey record, incident notes that become candidate checks |
+| Architecture | The control plane is human-change-only |
+| New documents | [Usage guide](docs/usage-guide.md), [case study](docs/case-study.md), [changelog](CHANGELOG.md) |
 
 ## 01 · Who it is for
 
@@ -70,7 +83,9 @@ AOGF is a **vendor-neutral governance whitepaper** with blank templates. It turn
 | 📐 [`docs/architecture.md`](docs/architecture.md) | Six logical roles, trust boundaries, core principles |
 | 🔁 [`docs/work-order-lifecycle.md`](docs/work-order-lifecycle.md) | `draft → submitted → approved → running → completed` state machine and revocation rules |
 | 🚦 [`docs/quality-gates.md`](docs/quality-gates.md) | Minimum checks for 8 gates, failure handling, pre-pilot test list |
-| 🧾 [`docs/receipts-and-audit.md`](docs/receipts-and-audit.md) | Recommended receipt fields, what never to log, hashes vs. signatures |
+| 🧾 [`docs/receipts-and-audit.md`](docs/receipts-and-audit.md) | Recommended receipt fields, the journey record, incident notes that prevent repeats, hashes vs. signatures |
+| 🧭 [`docs/usage-guide.md`](docs/usage-guide.md) | Step-by-step adoption for one workflow, with weak-versus-strong examples |
+| 🔎 [`docs/case-study.md`](docs/case-study.md) | How the authors run it, what failed, and the trade-offs accepted |
 | 📝 [`examples/work-order.example.yaml`](examples/work-order.example.yaml) | Blank work-order template |
 | 📄 [`examples/receipt.example.json`](examples/receipt.example.json) | Blank receipt template |
 
@@ -155,7 +170,8 @@ AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供�
 > | 有 | 沒有 |
 > |---|---|
 > | 治理框架說明（角色、流程、檢查點、紀錄欄位） | 任何可執行的程式、工具或服務 |
-> | 空白的工作單與收據模板（欄位都是空的） | 任何組織實際使用的規則、門檻或流程細節 |
+> | 空白的工作單與收據模板（欄位都是空的） | 任何組織的規則原文、門檻或內部程序 |
+> | 使用說明，以及一份作者自身運作的高層次案例 | 該運作環境的操作細節 |
 > | 設計原則與範圍限制 | 第三方認證、合規證明或效果保證 |
 >
 > 你可以照這個框架，填入自己團隊的規則、權限與驗收條件。框架只告訴你「該有哪些欄位與檢查點」，**不替你決定內容，也不替你執行任何控制**。
@@ -166,6 +182,18 @@ AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供�
 
 > [!TIP]
 > **實際運作中的 MVP：一套系統、三個部分。** 這套框架就是我們 AI 工具站 **[ampm-aiops.com](https://ampm-aiops.com/?utm_source=github&utm_medium=readme&utm_campaign=aogf)** 背後的治理系統，網站每天由 AI 代理在這套系統下運作。它的產出——公開的 AI 工具價格資料，每一筆都附官方來源與查核日期——公開在 **[awesome-ai-tools-pricing](https://github.com/AMPM-AIOPS-HQ/awesome-ai-tools-pricing)**。
+
+## v0.2 新增了什麼
+
+v0.2 加入的是實際運作這套框架之後學到的事。v0.1 的內容沒有移除。
+
+| 範圍 | 新增 |
+| --- | --- |
+| 生命週期 | 先分類（什麼時候需要工作單）、自動化作業依預先核准的任務清單、不留孤兒工作單、取消紀錄、政策更新與進行中的工作 |
+| 品質閘門 | 三個審查席位、閘門本身的可靠性要求、AI 審查員的界線、格式檢查與事實檢查 |
+| 收據 | 每次執行（含失敗）都有收據、過程紀錄、會變成候選檢查的事故紀錄 |
+| 架構 | 控制面只有人能改 |
+| 新文件 | [使用說明](docs/zh-TW/usage-guide.md)、[運作案例](docs/zh-TW/case-study.md)、[版本紀錄](CHANGELOG.md) |
 
 ## 01 · 適用對象
 
@@ -193,7 +221,9 @@ AOGF（Agent Operations Governance Framework）是一份**不綁定模型或供�
 | 📐 [`docs/architecture.md`](docs/zh-TW/architecture.md) | 六個邏輯角色、信任邊界、核心原則 |
 | 🔁 [`docs/work-order-lifecycle.md`](docs/zh-TW/work-order-lifecycle.md) | `draft → submitted → approved → running → completed` 狀態機與撤銷規則 |
 | 🚦 [`docs/quality-gates.md`](docs/zh-TW/quality-gates.md) | 8 道閘門的最低檢查、未通過處置、試行前測試清單 |
-| 🧾 [`docs/receipts-and-audit.md`](docs/zh-TW/receipts-and-audit.md) | 收據建議欄位、不得記錄的內容、雜湊與簽章的界線 |
+| 🧾 [`docs/receipts-and-audit.md`](docs/zh-TW/receipts-and-audit.md) | 收據建議欄位、過程紀錄、能阻止重犯的事故紀錄、雜湊與簽章的界線 |
+| 🧭 [`docs/usage-guide.md`](docs/zh-TW/usage-guide.md) | 一條流程的逐步導入，附「寫得弱／寫得強」對照 |
+| 🔎 [`docs/case-study.md`](docs/zh-TW/case-study.md) | 作者自己怎麼運作、出過什麼問題、接受了哪些取捨 |
 | 📝 [`examples/work-order.example.yaml`](examples/work-order.example.yaml) | 工作單空白模板 |
 | 📄 [`examples/receipt.example.json`](examples/receipt.example.json) | 收據空白模板 |
 

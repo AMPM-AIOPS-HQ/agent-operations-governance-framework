@@ -27,5 +27,16 @@
     "algorithm": "",
     "digest": "",
     "scope": ""
-  }
+  },
+  "journey": {
+    "seat_events": [],
+    "blocks": [],
+    "anomalies": [],
+    "escalations": [],
+    "release": {
+      "released_at": "",
+      "observed": ""
+    }
+  },
+  "incident_notes": []
 }

@@ -24,3 +24,10 @@ work_order:
     status: ""
   acceptance: []
   stop_conditions: []
+  deadline_from_approval: ""
+  current_owner: ""
+  task_list_ref: ""        # for automations: the pre-approved task list this run follows
+  policy_annotations: []    # policy versions noted while the work order was open
+  cancellation:
+    reason: ""
+    replaced_by: ""

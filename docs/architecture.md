@@ -36,3 +36,13 @@ These are logical responsibilities; they do not have to be deployed as separate 
 ## Deployment considerations
 
 Deployers should record the runtime environment, policy version, model and tool versions, permission settings, data flows and retention policy. Configure isolation, rate limits, timeouts, retry limits and a human stop mechanism according to risk. This architecture document does not by itself prove that any deployment has implemented these controls.
+
+## The control plane is human-change-only
+
+Distinguish the work an agent does from the mechanisms that constrain that work. The second group is the control plane: policies, gates and their rules, review procedures, security mechanisms, and anything that spends money.
+
+- Agents may **read** the control plane. Being able to inspect a rule is how an actor avoids breaking it, and how problems in the rule get noticed.
+- Agents may **not change** it. When a change is needed, an agent prepares a candidate version with tests and an explanation of what becomes stricter or looser; a human applies it.
+- After a change, synchronize every copy of the control in the same operation, and treat the change as incomplete until they match. Divergent copies mean the same action is blocked in one place and allowed in another.
+
+The reason is structural, not a judgment about any particular agent: an actor that can adjust the checks on its own work is not being checked. Pay particular attention to changes that loosen a control — those are the ones to slow down.
